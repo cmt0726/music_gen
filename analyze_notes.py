@@ -4,11 +4,11 @@ import os
 import pickle5 as pickle
 
 notes = []
-path = "midi_files/"
+path = "music_gen/midi_files/"
 for dir in os.listdir(path):
     num_midis = len(os.listdir(path + "/" + dir))
     progress = 0
-    for file in os.listdir(path + "/" + dir)[0:10]: #if we use more than this, each epoch becomes HUGE
+    for file in os.listdir(path + "/" + dir)[0:5]: #if we use more than this, each epoch becomes HUGE
         parsed_midi = converter.parse(path + dir + "/" + file)
         notes_to_parse = None
         parts = instrument.partitionByInstrument(parsed_midi)
@@ -41,5 +41,5 @@ for dir in os.listdir(path):
 
 print("Done analyzing Midis!")
 
-with open("notes.pickle", "wb") as f:
+with open("music_gen/notes.pickle", "wb") as f:
     pickle.dump(notes, f, protocol=pickle.HIGHEST_PROTOCOL)
