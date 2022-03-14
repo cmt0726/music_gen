@@ -1,7 +1,7 @@
 
 from music21 import *
 import os
-import pickle
+import pickle5 as pickle
 
 notes = []
 path = "midi_files/"

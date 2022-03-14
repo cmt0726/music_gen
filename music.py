@@ -9,7 +9,7 @@ from keras.utils import np_utils
 from keras.callbacks import ModelCheckpoint
 import numpy
 import os
-import pickle
+import pickle5 as pickle
 
 
 notes = []
